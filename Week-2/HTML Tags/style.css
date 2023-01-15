@@ -1,0 +1,16 @@
+body{
+    background-color: #a6a6a6;
+    font-size: 15px;
+    color: white;
+}
+
+ol{
+    list-style: square;
+}
+
+img{
+    height: 150px;
+    width: auto;
+    border: 10px ridge rgb(59, 59, 59);
+    border-radius: 10px;
+}
