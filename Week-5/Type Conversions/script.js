@@ -345,8 +345,8 @@ alert(test);`);
 console.log("true will be displayed");
 console.log("==============");
 
-// Exercise 51
-console.log("Exercise 51");
+// Exercise 52
+console.log("Exercise 52");
 console.log(`let test = Boolean(1/0);
 alert(test);`);
 console.log("true will be displayed");
