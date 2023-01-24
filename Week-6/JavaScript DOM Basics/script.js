@@ -9,7 +9,7 @@ console.log(firstDiv);
 console.log("================================");
 
 let firstDiv2 = document.getElementById("div-container1")[0];
-console.log(firstDiv);
+console.log(firstDiv2);
 
 console.log("================================");
 
