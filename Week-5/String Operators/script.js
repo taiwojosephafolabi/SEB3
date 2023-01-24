@@ -1,73 +1,49 @@
-"use strict"
+"use strict";
 
-let a = 1;
-let b = 2;
+// Exercise 1
+console.log("Exercise 1");
+let firstName = "Joseph";
+let lastName = "Afolabi";
+console.log("My full name is " + firstName + " " + lastName);
+console.log("=================");
 
-let result = a + b; // Can change operator to -, *, /
-console.log(result);
+// Exercise 2
+console.log("Exercise 2");
+let str1 = "!!!";
+console.log(str1);
+console.log("=================");
 
-let c = 4;
+// Exercise 3
+console.log("Exercise 3");
+let str2 = "java";
+let str3 = "script";
+console.log(str2 + str3);
+console.log("=================");
 
-let sum = (a - b) + c;
-console.log("sum is", sum);
+// Exercise 4
+console.log("Exercise 4");
+let str4 = "hello";
+let str5 = "world";
+console.log(str4 + " " + str5);
+console.log("=================");
 
-let result2 = a += b; // a = a + b
-console.log("result2 is", result2);
-console.log("a is", a);
-console.log("b is", b);
+// Exercise 5
+console.log("Exercise 5");
+let str6 = "Joseph";
+console.log(str6 + " has " + str6.length + " letters");
+console.log("=================");
 
-let result3 = b +=a; // b = b + a
-console.log("result3 is", result3);
-console.log("a is", a);
-console.log("b is", b);
+// Exercise 6
+console.log("Exercise 6");
+let str7 = "xxx";
+let str8 = "yyy";
+let txt  = `aaa ${str7} bbb ${str8} ccc`;
+console.log(txt);
+console.log("=================");
 
-let result4 = b -= 1; // b = b + 1
-console.log("result4 is", result3);
-console.log("a is", a);
-console.log("b is", b);
-
-let result5 = b **= 4; // b = b ** 4 (power)
-console.log("result4 is", result3);
-console.log("a is", a);
-console.log("b is", b);
-
-let result6 = b %= a; // b = remainder of b / a)
-console.log("result4 is", result3);
-console.log("a is", a);
-console.log("b is", b);
-
-// Identity
-if(2 === 3){
-    console.log("YES")
-}
-else if( 2 !== 3){
-    console.log("NO")
-}
-
-// AND operator
-if(2 < 3 && 3 < 10){
-    console.log("YES")
-}
-else if( 2 !== 3){
-    console.log("NO")
-}
-
-// OR operator 
-if(2 < 3 || 3 > 10){
-    console.log("YES")
-}
-else if( 2 !== 3){
-    console.log("NO")
-}
-
-let str1 = "Joseph";
-let str2 = " is studying a course";
-let result7 = `${str1+ str2 + " today"}`
-console.log(result7);
-
-
-let number1 = 23;
-let number2 = 25;
-let myString = "80"
-
-console.log(number1 * myString);
+// Exercise 7
+console.log("Exercise 7");
+let str9 = `a
+b
+c`;
+console.log(str9);
