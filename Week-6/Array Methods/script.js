@@ -95,3 +95,14 @@ let result10 = loveCircularArr.filter(filterName);
 console.log(result10);
 
 // map
+
+// splice - override items from an array
+
+scores.splice(2, 0, 23); // add
+console.log(scores);
+
+scores.splice(5, 1); // remove
+console.log(scores);
+
+scores.splice(0, 5, 33, 2, 67); // override
+console.log(scores);
