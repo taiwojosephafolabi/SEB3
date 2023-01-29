@@ -20,3 +20,19 @@ let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for(let i = 0; i < myArray.length; i++) {
     console.log(myArray[i]);
 }
+
+
+
+
+// Adding handlers in a loop
+// Exercise 4
+console.log("Exercise 4");
+let inputs = document.querySelectorAll("input");
+  
+  for (let elem of inputs) {
+    elem.addEventListener("click", func);
+  }
+
+function func() {
+  this.value = Number(this.value) + 1;
+};
