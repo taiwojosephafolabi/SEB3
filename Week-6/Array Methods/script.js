@@ -96,6 +96,12 @@ console.log(result10);
 
 // map
 
+function checkElement(score){
+    console.log(score);
+}
+
+scores.map(checkElement);
+
 // splice - override items from an array
 
 scores.splice(2, 0, 23); // add
