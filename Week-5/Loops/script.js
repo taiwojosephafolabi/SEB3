@@ -19,6 +19,19 @@ let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for (let i = 0; i < myArray.length; i++) {
   console.log(myArray[i]);
 }
+console.log("===============");
+
+// Exercise 1
+console.log("Exercise 1");
+let paras = document.querySelectorAll(".para");
+let buttonClick = document.querySelector("#click");
+
+buttonClick.addEventListener("click", func1);
+function func1() {
+  for (let para of paras) {
+    paras.textContent = "text";
+  }
+}
 
 // Adding handlers in a loop
 // Exercise 4
