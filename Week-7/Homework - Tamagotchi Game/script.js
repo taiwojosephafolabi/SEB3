@@ -9,7 +9,7 @@ let socialBar = document.getElementById("social");
 
 function Loop(time = 1) {
   let total =
-    stats.hunger + stats.hygiene + stats.sleep + stats.fun + stats.social;
+    stats["hunger"] + stats.hygiene + stats.sleep + stats.fun + stats.social;
 
   if (
     stats.hunger <= 0 ||
@@ -29,6 +29,7 @@ function Loop(time = 1) {
     petImg.src = "img/tamagochi4.png";
   } else if (total > 50) {
     petImg.src = "img/tamagochi5.png";
+    // button.style.color = "red";
   }
 
   //   if (hunger - parseInt(time) < 0) {
@@ -44,17 +45,17 @@ function Loop(time = 1) {
   //   }
 
   function checkValue(value, element, time) {
-    if (value - parseInt(time) < 0) {
-      value = 0;
+    if (stats[value] - parseInt(time) < 0) {
+      stats[value] = 0;
       alert("Game Over!");
     } else {
-      value = value - parseInt(time);
-      element.value = value;
-      element.style.setProperty("accent-color", value > 50 ? "inherit" : "red");
+      stats[value] = stats[value] - parseInt(time);
+      element.value = stats[value];
+      element.style.setProperty("accent-color", stats[value] > 50 ? "inherit" : "red");
     }
   }
 
-  checkValue(stats.hunger, hungerBar, time);
+  checkValue("hunger", hungerBar, time);
 
   // if (hygiene - parseInt(time) < 0) {
   //   hygiene = 0;
@@ -68,7 +69,7 @@ function Loop(time = 1) {
   //   );
   // }
 
-  checkValue(stats.hygiene, hygieneBar, time);
+  checkValue("hygiene", hygieneBar, time);
 
   // if (sleep - parseInt(time) < 0) {
   //   sleep = 0;
@@ -79,7 +80,7 @@ function Loop(time = 1) {
   //   sleepBar.style.setProperty("accent-color", sleep > 50 ? "inherit" : "red");
   // }
 
-  checkValue(stats.sleep, sleepBar, time);
+  checkValue("sleep", sleepBar, time);
 
   // if (fun - parseInt(time) < 0) {
   //   fun = 0;
@@ -90,7 +91,7 @@ function Loop(time = 1) {
   //   funBar.style.setProperty("accent-color", fun > 50 ? "inherit" : "red");
   // }
 
-  checkValue(stats.fun, funBar, time);
+  checkValue("fun", funBar, time);
 
   // if (social - parseInt(time) < 0) {
   //   social = 0;
@@ -104,9 +105,9 @@ function Loop(time = 1) {
   //   );
   // }
 
-  checkValue(stats.social, socialBar, time);
+  checkValue("social", socialBar, time);
 
-  hungerBar.innerHTML = stats.hunger + "%";
+  hungerBar.innerHTML = stats["hunger"] + "%";
   hygieneBar.innerHTML = stats.hygiene + "%";
   sleepBar.innerHTML = stats.sleep + "%";
   funBar.innerHTML = stats.fun + "%";
@@ -117,19 +118,20 @@ function Start() {
   setInterval(Loop, 1000);
 }
 
+function resetToMaxValue(value, element) {
+  stats[value] = 100;
+  element.innerHTML = stats[value] + "%";
+  element.value = stats[value];
+}
+
 // function Eat() {
 //   hunger = 100;
 //   hungerBar.innerHTML = hunger + "%";
 //   hungerBar.value = hunger;
 // }
 
-function resetToMaxValue(value, element) {
-  stats.value = 100;
-  element.innerHTML = stats.value + "%";
-  element.value = stats.value;
-}
 function Eat() {
-  restToMaxValue(stats.hunger, hungerBar);
+  resetToMaxValue("hunger", hungerBar);
 }
 
 // function Bathe() {
@@ -137,23 +139,38 @@ function Eat() {
 //   hygieneBar.innerHTML = hygiene + "%";
 //   hygieneBar.value = hygiene;
 // }
+function Bathe() {
+  resetToMaxValue("hygiene", hygieneBar);
+}
+
+// function Sleep() {
+//   sleep = 100;
+//   sleepBar.innerHTML = sleep + "%";
+//   sleepBar.value = sleep;
+// }
 
 function Sleep() {
-  sleep = 100;
-  sleepBar.innerHTML = sleep + "%";
-  sleepBar.value = sleep;
+  resetToMaxValue("sleep", sleepBar);
 }
+
+// function Play() {
+//   fun = 100;
+//   funBar.innerHTML = fun + "%";
+//   funBar.value = fun;
+// }
 
 function Play() {
-  fun = 100;
-  funBar.innerHTML = fun + "%";
-  funBar.value = fun;
+  resetToMaxValue("fun", funBar);
 }
 
+// function Talk() {
+//   social = 100;
+//   socialBar.innerHTML = social + "%";
+//   socialBar.value = social;
+// }
+
 function Talk() {
-  social = 100;
-  socialBar.innerHTML = social + "%";
-  socialBar.value = social;
+  resetToMaxValue("social", socialBar);
 }
 
 Start();
