@@ -1,13 +1,16 @@
 function getSecondLargest(nums) {
-  let i = 0;
-  while (i < ((nums.length)-1)) {
-      let test1 = nums[i];
-      let test2 = nums[i+1]
-      if(test2 < test1) {
-          return test2
-      }
-      else {
-          i++;
-      }
+  let test1 = nums[0];
+  let test2 = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    if(nums[i] > test1) {
+      test2 = test1;
+      test1 = nums[i];
+      continue;
+    }
+    if ((nums[i] > test2) && (nums[i] < test1)) {
+      test2 = nums[i];
+    }
   }
-}
+return test2;
+};
