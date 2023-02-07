@@ -4,6 +4,6 @@ function factorial(integer) {
   }
   for (let num = integer - 1; num >= 1; num--) {
     integer *= num;
-    return integer;
   }
+  return integer;
 };
