@@ -53,7 +53,7 @@ describe("Testing math functions", () => {
 });
 
 describe("the arguments return age", () => {
-  test("Promise testing", () => {
+  test("Promise testing: User age", () => {
     return fetchAge()
       .then((data) => {
         expect(data).toBe(21);
@@ -63,6 +63,27 @@ describe("the arguments return age", () => {
       });
   });
 
+  test("Promise testing: Negative age", () => {
+    return fetchAge()
+      .then((data) => {
+        expect(data).not.toBe(data < 0);
+      })
+      .catch((err) => {
+        console.log("Check arguments. Age cannot be negative");
+      });
+  });
+
+  // still needs work
+  test("Promise testing: Current year", () => {
+    return fetchAge()
+      .then((data) => {
+        expect(data).toMatch(2023);
+      })
+      .catch((err) => {
+        console.log("Check arguments. Current year is 2023");
+      });
+  });
+// 
 
 
 
