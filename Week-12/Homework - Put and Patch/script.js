@@ -40,5 +40,23 @@ app.get("/events/updated", (req, res) => {
 });
 //
 // Update - Put
+app.put("/events/update/:id", (req, res) => {
+  let eventId = req.params.id;
+  const { ticketSales } = req.body;
+  const findEvent = events.find(
+    (event) => event.id === eventId
+  );
+
+  if(ticketSales){
+    findEvent.ticketSales = ticketSales;
+  };
+  res.send("Ticket sales updated!")
+});
+
+app.get("/events/updated", (req, res) => {
+  res.send(events);
+});
+
+
 
 //
