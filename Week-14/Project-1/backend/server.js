@@ -18,8 +18,8 @@ app.get('/project1', (req, res) => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '5061b5fc0dmshb2c4d064a15a60fp103b36jsn5a4a2c9b3dd1',
-      'X-RapidAPI-Host': 'mashape-community-urban-dictionary.p.rapidapi.com'
+      'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+      'X-RapidAPI-Host': process.env.RAPID_API_HOST
     }
   };
   
