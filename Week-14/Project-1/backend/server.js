@@ -2,6 +2,7 @@
 
 import express, { request } from 'express';
 import * as dotenv from 'dotenv';
+import fetch from "node-fetch";
 
 const app = express();
 dotenv.config();
@@ -23,20 +24,28 @@ app.get('/project1', (req, res) => {
     }
   };
   
-  fetch(url, options)
-    .then(res => res.json())
-    .then(data => {return result.push(...data.list)})
-    .catch(err => console.error('error:' + err));
-    console.log(result)
-  res.send(result);
-
+  async function checkResult(){
+    return await fetch(url, options)
+      .then(response=>{
+          return response.json()
+      })
+      .then(res =>{return res.list.map(element => {return result.push(element)})})
+      .catch(err => console.error('error:' + err));
+    }
+  
+  async function  showResult(){
+      await checkResult()
+      console.log(result)
+  }
+  
+  showResult()
 });
 
 
 
-app.get('/urbanDictionaryAPI', (req, res) => {
-  console.log(urbanDictionaryAPI());
-});
+// app.get('/urbanDictionaryAPI', (req, res) => {
+//   console.log(urbanDictionaryAPI());
+// });
 
 app.listen(process.env.PORT, () => {
   console.log('listening on port ' + process.env.PORT)
