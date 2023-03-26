@@ -7,6 +7,10 @@ import dotenv from 'dotenv'
 const app = express();
 dotenv.config();
 
+app.get('/', (req, res) => {
+  res.sendFile('C:/Users/Joseph/Projects/SEB3/Week-14/Homework - Local Storage/frontend/index.html')
+});
+
 app.get('/userDetails', (req, res) => {
   res.sendFile('C:/Users/Joseph/Projects/SEB3/Week-14/Homework - Local Storage/frontend/userDetails.html')
 });
