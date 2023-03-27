@@ -22,7 +22,7 @@ Structured Query Language (SQL) is a computer language for storing, manipulating
 https://www.tutorialspoint.com/sql/sql-overview.htm
 
 - What is SQL server?
-SQL Server is a software application designed to manage databases, it stores and retrieves data as requested by otherhosted-applications-1 applications.
+SQL Server is a software application designed to manage databases, it stores and retrieves data as requested by other applications.
 https://www.yourofficeanywhere.co.uk/info-hub/what-is-sql-server/
 
 - What is workbench?
