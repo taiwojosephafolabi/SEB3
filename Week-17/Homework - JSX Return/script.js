@@ -19,7 +19,6 @@ function App() {
       <li>text3</li>
     </ul>
   );
-  
 }
 
 // Exercise 2 - return 2 ul tags
