@@ -1,0 +1,22 @@
+.App {
+  border: 2px solid black;
+  height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  font-size: large;
+}
+
+.users-container {
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+  margin: 10px;
+}
+
+.user {
+  text-align: center;
+  border: 2px, solid black;
+  margin: 5px;
+}
