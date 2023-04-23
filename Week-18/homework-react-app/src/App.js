@@ -1,7 +1,6 @@
 import "./App.css";
-import React from "react";
+import React, { useId, useState } from "react";
 import Users from "./components/Users";
-import { useId, useState } from "react";
 
 function App() {
   const usersData = [
@@ -16,13 +15,24 @@ function App() {
   const [age, setAge] = useState("age");
 
   function FirstNameChange() {
-    setFirstName("NewName");
+    setFirstName("Joseph");
     console.log("First name changed!");
+  }
+
+  function LastNameChange() {
+    setLastName("Afolabi");
+    console.log("Last name changed!");
+  }
+
+  function AgeChange() {
+    setAge("21");
+    console.log("Age changed!");
   }
 
   return (
     <div className="App">
       <h1 className="heading">Users</h1>
+
       <Users
         users={usersData}
         usersFName={firstName}
@@ -32,7 +42,15 @@ function App() {
         usersAge={age}
         setAge={setAge}
         FirstNameChange={(event) => FirstNameChange(firstName)}
+        LastNameChange={(event) => LastNameChange(lastName)}
+        AgeChange={(event) => AgeChange(age)}
       />
+      <span className="user-info">
+        <p>
+          Hello {firstName} {lastName}.
+        </p>
+        <p>You are {age} years old.</p>
+      </span>
     </div>
   );
 }

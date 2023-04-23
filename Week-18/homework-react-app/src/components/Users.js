@@ -1,5 +1,7 @@
 import React from "react";
 import FirstNameBtn from "./FirstNameBtn";
+import LastNameBtn from "./LastNameBtn";
+import AgeBtn from "./AgeBtn";
 
 function Users(props) {
   return (
@@ -14,6 +16,8 @@ function Users(props) {
           <p>{usersData.age}</p>
           <span className="button-container">
             <FirstNameBtn FirstNameChange={props.FirstNameChange} />
+            <LastNameBtn LastNameChange={props.LastNameChange} />
+            <AgeBtn AgeChange={props.AgeChange} />
           </span>
         </div>
       ))}
