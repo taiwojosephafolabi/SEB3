@@ -2,6 +2,9 @@ import React from "react";
 import FirstNameBtn from "./FirstNameBtn";
 import LastNameBtn from "./LastNameBtn";
 import AgeBtn from "./AgeBtn";
+import VerificationBtn from "./VerificationBtn";
+import AgeIncreaseBtn from "./AgeIncreaseBtn";
+import AgeDecreaseBtn from "./AgeDecreaseBtn";
 
 function Users(props) {
   return (
@@ -18,6 +21,9 @@ function Users(props) {
             <FirstNameBtn FirstNameChange={props.FirstNameChange} />
             <LastNameBtn LastNameChange={props.LastNameChange} />
             <AgeBtn AgeChange={props.AgeChange} />
+            <VerificationBtn VerificationStatus={props.VerificationStatus} />
+            <AgeIncreaseBtn AgeIncrease={props.AgeIncrease} />
+            <AgeDecreaseBtn AgeDecrease={props.AgeDecrease} />
           </span>
         </div>
       ))}

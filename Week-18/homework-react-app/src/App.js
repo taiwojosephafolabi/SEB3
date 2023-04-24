@@ -12,7 +12,8 @@ function App() {
 
   const [firstName, setFirstName] = useState("first name");
   const [lastName, setLastName] = useState("last name");
-  const [age, setAge] = useState("age");
+  const [age, setAge] = useState(0);
+  const [verification, setVerification] = useState(null);
 
   function FirstNameChange() {
     setFirstName("Joseph");
@@ -25,8 +26,23 @@ function App() {
   }
 
   function AgeChange() {
-    setAge("21");
+    setAge(21);
     console.log("Age changed!");
+  }
+
+  function VerificationStatus() {
+    setVerification("YOU ARE BANNED!");
+    console.log("User is banned!")
+  }
+
+  function AgeIncrease(item) {
+    setAge(item += 1);
+    console.log("Age increased!")
+  }
+
+  function AgeDecrease(item) {
+    setAge(item -= 1);
+    console.log("Age decreased!")
   }
 
   return (
@@ -41,15 +57,21 @@ function App() {
         setLasttName={setLastName}
         usersAge={age}
         setAge={setAge}
+        usersVerification={verification}
+        setVerification={setVerification}
         FirstNameChange={(event) => FirstNameChange(firstName)}
         LastNameChange={(event) => LastNameChange(lastName)}
         AgeChange={(event) => AgeChange(age)}
+        VerificationStatus={(event) => VerificationStatus(verification)}
+        AgeIncrease={(event) => AgeIncrease(age)}
+        AgeDecrease={(event) => AgeDecrease(age)}
       />
       <span className="user-info">
         <p>
           Hello {firstName} {lastName}.
         </p>
         <p>You are {age} years old.</p>
+        <p>Verification Status: {verification}</p>
       </span>
     </div>
   );
